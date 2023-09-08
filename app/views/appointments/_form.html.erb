@@ -1,0 +1,47 @@
+<%= form_with(model: appointment) do |form| %>
+  <% if appointment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+      <ul>
+        <% appointment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.text_field :date %>
+  </div>
+
+  <div>
+    <%= form.label :hour, style: "display: block" %>
+    <%= form.text_field :hour %>
+  </div>
+
+  <div>
+    <%= form.label :duration, style: "display: block" %>
+    <%= form.text_field :duration %>
+  </div>
+
+  <div>
+    <%= form.label :veterinary_id, style: "display: block" %>
+    <%= form.select(:veterinary_id, Veterinary.all.collect {|veterinary| [veterinary.name, veterinary.id]}) %>
+  </div>
+
+  <div>
+    <%= form.label :pet_id, style: "display: block" %>
+    <%= form.select(:pet_id, Pet.all.collect {|pet| [pet.name, pet.id]}) %>
+  </div>
+
+  <div>
+    <%= form.label :service_id, style: "display: block" %>
+    <%= form.select(:service_id, Service.all.collect {|service| [service.name, service.id]}) %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

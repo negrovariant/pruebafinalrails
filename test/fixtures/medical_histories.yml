@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyString
+  pet: one
+  appointment: one
+
+two:
+  content: MyString
+  pet: two
+  appointment: two

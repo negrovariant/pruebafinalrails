@@ -1,0 +1,33 @@
+<p style="color: green"><%= notice %></p>
+<h1>Pets</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Species</th>
+      <th scope="col">Race</th>
+      <th scope="col">Date of Birth</th>
+      <th scope="col">Medical History</th>
+      <th scope="col">Additional Notes</th>
+      <th scope="col">Client</th>
+      <th scope="col">Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pets.each do |pet| %>
+      <tr>
+        <td><%= pet.name %></td>
+        <td><%= pet.species %></td>
+        <td><%= pet.race %></td>
+        <td><%= pet.date_of_birth %></td>
+        <td><%= pet.medical_hostory %></td>
+        <td><%= pet.additional_notes%></td>
+        <td><%= pet.client%></td>
+        <td><img src="<%= pet.image.url %> width="42" height="42"></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div id="pets">
+</div>
+<%= link_to "New pet", new_pet_path %>

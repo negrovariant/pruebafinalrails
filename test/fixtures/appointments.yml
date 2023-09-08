@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: MyString
+  hour: MyString
+  duration: MyString
+  veterinary: one
+  pet: one
+  service: one
+
+two:
+  date: MyString
+  hour: MyString
+  duration: MyString
+  veterinary: two
+  pet: two
+  service: two

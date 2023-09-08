@@ -1,0 +1,54 @@
+<div class="card text-center">
+  <div class="card-header">
+    Nosotros
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Veterinaria Mascota Feliz</h5>
+    <p class="card-text">contamos con la mejor atencion y excelente trato hacia su mascota</p>
+    <p class="card-text">numeros de contacto: +56942183988/+56979771905</p>
+    <a href="#" class="btn btn-primary">estamos ubicados en avenida manuel antonio matta 0329, Santiago</a>
+  </div>
+  <div class="card-footer text-body-secondary">
+  </div>
+</div>
+<h1>Pets</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Species</th>
+      <th scope="col">Race</th>
+      <th scope="col">Date of Birth</th>
+      <th scope="col">Medical History</th>
+      <th scope="col">Additional Notes</th>
+      <th scope="col">Client</th>
+      <th scope="col">Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Pet.all.each do |pet| %>
+      <tr>
+        <td><%= pet.name %></td>
+        <td><%= pet.species %></td>
+        <td><%= pet.race %></td>
+        <td><%= pet.date_of_birth %></td>
+        <td><%= pet.medical_hostory %></td>
+        <td><%= pet.additional_notes%></td>
+        <td><%= pet.client.name%></td>
+        <td><img src="<%= pet.image.url %> width="42" height="42"></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="card text-center">
+  <div class="card-header">
+    Citas
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Agenda tu cita</h5>
+    <p class="card-text">nuestros horarios de atencion son desde 12.00 a 18.00 pm</p>
+    <%= render "/appointments/form", appointment: Appointment.new %>
+  </div>
+  <div class="card-footer text-body-secondary">
+  </div>
+</div>
